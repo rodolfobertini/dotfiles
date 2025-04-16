@@ -88,6 +88,21 @@ echoNoColorEmptyLine;
 # echoSectionTitle "Installing curl";
 # cmd aptInstall curl;
 
+# echoSectionTitle "Installing exa (um 'ls' melhorado)";
+cmd aptInstall exa;
+
+# echoSectionTitle "Installing bat (alternativa ao 'cat')";
+cmd aptInstall bat;
+
+# echoSectionTitle "Installing gh (github)";
+cmd aptInstall gh;
+
+# echoSectionTitle "Installing ncdu (alternativa ao 'du' para listar tamanho dos diretórios)";
+cmd aptInstall ncdu;
+
+# echoSectionTitle "Installing tilix (Terminal)";
+cmd aptInstall tilix;
+
 # echoSectionTitle "Installing build-essential";
 # cmd aptInstall build-essential;
 
@@ -101,7 +116,7 @@ echoNoColorEmptyLine;
 cmd aptInstall git;
 
 echoSectionTitle "Cloning dotfiles repo in $dotfiles directory";
-cmd gitClone https://github.com/AbraaoAlves/dotfiles.git $dotfiles;
+cmd gitClone https://github.com/rodolfobertini/dotfiles.git $dotfiles;
 
 echoColorEmptyLine;
 cmd echo "████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     ";
@@ -139,12 +154,12 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # install asdf plugins
 cmd $HOME/.asdf/lib/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 cmd $HOME/.asdf/lib/asdf.sh plugin add yarn 
-cmd $HOME/.asdf/lib/asdf.sh install yarn 1.22.19
+cmd $HOME/.asdf/lib/asdf.sh install yarn
 cmd $HOME/.asdf/lib/asdf.sh install nodejs lts
 
 echoColorEmptyLine;
