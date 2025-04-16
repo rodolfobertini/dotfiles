@@ -6,7 +6,7 @@ My dotfiles
 Run this in your terminal.
 
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/AbraaoAlves/dotfiles/main/install-ubuntu.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/rodolfobertini/dotfiles/main/install-ubuntu.sh)
 ```
 
 After installation you should reboot your system for all settings take effect.
