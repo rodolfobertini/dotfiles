@@ -134,6 +134,9 @@ echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
 cmd mv z.sh .z.sh;
 
+echoSectionTitle "Installing Oh My Zsh";
+cmd gitClone --depth=1 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+
 echoSectionTitle "Installing Powerlevel10k";
 cmd gitClone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
 
