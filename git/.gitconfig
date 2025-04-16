@@ -1,6 +1,6 @@
 [user]
-	email = abraao.teodosio@gmail.com
-	name = AbraaoAlves
+	email = rodolfobr@gmail.com
+	name = rodolfobertini
 [init]
   defaultBranch = main
 
@@ -25,7 +25,7 @@
 	ap = add .
 	cm = commit -m
 	unstage = reset HEAD --
-    undo = reset HEAD~1
+    	undo = reset HEAD~1
 	ck = checkout
 	br = branch
 	cl = clone
