@@ -134,6 +134,9 @@ echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
 cmd mv z.sh .z.sh;
 
+echoSectionTitle "Improved Nano Syntax Highlighting Files";
+cmd wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh;
+
 echoSectionTitle "Installing Oh My Zsh";
 cmd gitClone --depth=1 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
