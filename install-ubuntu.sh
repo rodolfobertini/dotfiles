@@ -103,8 +103,8 @@ cmd aptInstall ncdu;
 # echoSectionTitle "Installing tilix (Terminal)";
 cmd aptInstall tilix;
 
-# echoSectionTitle "Installing build-essential";
-# cmd aptInstall build-essential;
+# echoSectionTitle "Installing fzf";
+# cmd aptInstall fzf;
 
 # echoSectionTitle "Installing apt dependencies";
 # cmd aptInstall software-properties-common;
