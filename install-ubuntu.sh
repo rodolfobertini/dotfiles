@@ -36,7 +36,7 @@ function echoNoColorEmptyLine() {
 }
 
 function aptUpdate() {
-  cmd sudo apt update;
+  cmd sudo apt update && sudo apt dist-upgrade -y;
 }
 
 function aptInstall() {
@@ -76,7 +76,6 @@ read -p "Press Enter to continue...";
 echoSectionTitle "Updating system";
 
 aptUpdate;
-cmd sudo apt -y upgrade;
 
 echoColorEmptyLine;
 echo "██████╗ ███████╗██████╗ ███████╗███╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗██╗███████╗███████╗";
