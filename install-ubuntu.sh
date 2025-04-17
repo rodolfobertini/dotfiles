@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # colors
-green="\033[0;32m"
+green="\033[0;32m" 
 no_color="\033[0m"
 
 # locations
@@ -91,31 +91,44 @@ echoNoColorEmptyLine;
 aptInstall curl;
 aptInstall wget;
 
-# echoSectionTitle "Installing exa (um 'ls' melhorado)";
+# echoSectionTitle "Installing exa (alternativa ao 'ls')";
+# echo "Exa é uma alternativa moderna ao comando 'ls', com suporte a cores e exibição de ícones.";
 aptInstall exa;
 
 # echoSectionTitle "Installing bat (alternativa ao 'cat')";
+# echo "Bat é uma alternativa moderna ao comando 'cat', com suporte a cores e exibição de ícones.";
 aptInstall bat;
 
-# echoSectionTitle "Installing gh (github)";
+# echoSectionTitle "Installing gh (GitHub CLI)";
+# echo "O GitHub CLI é uma ferramenta de linha de comando que permite interagir com o GitHub diretamente do terminal.";
 aptInstall gh;
 
-# echoSectionTitle "Installing ncdu (alternativa ao 'du' para listar tamanho dos diretórios)";
+# echoSectionTitle "Installing ncdu (Disk Usage Analyzer)";
+# echo "Ncdu é uma ferramenta de linha de comando que analisa o uso do disco e fornece uma interface interativa para explorar os diretórios.";
+# echo "É útil para identificar quais arquivos ou diretórios estão ocupando mais espaço em disco.";
 aptInstall ncdu;
 
-# echoSectionTitle "Installing tilix (Terminal)";
+# echoSectionTitle "Installing tilix (Terminal Emulator)";
+# echo "Tilix é um emulador de terminal avançado que suporta divisões de tela, guias e muito mais.";
 aptInstall tilix;
 
-# echoSectionTitle "Installing fzf";
+# echoSectionTitle "Installing fzf(Fuzzy Finder)";
+# echo "Fzf é um utilitário de linha de comando que fornece uma interface de pesquisa fuzzy para arquivos e diretórios.";
+# echo "Ele pode ser usado em conjunto com outros comandos para facilitar a navegação e a seleção de arquivos.";
 aptInstall fzf;
 
-# echoSectionTitle "Installing apt dependencies";
-# aptInstall software-properties-common;
+# echoSectionTitle "Installing nala (gerenciador de pacotes)";
+# echo "Nala é um gerenciador de pacotes que melhora a experiência do apt, tornando-a mais rápida e amigável.";
+aptInstall nala;
 
-# echoSectionTitle "Installing tree";
+# echoSectionTitle "Installing tree (Directory Tree Viewer)";
+# echo "Tree é uma ferramenta de linha de comando que exibe a estrutura de diretórios em forma de árvore.";
+# echo "É útil para visualizar a hierarquia de diretórios e arquivos de forma organizada.";
 aptInstall tree;
 
-# echoSectionTitle "Installing Git";
+# echoSectionTitle "Installing Git (Git Version Control)";
+# echo "Git é um sistema de controle de versão amplamente utilizado para rastrear alterações em arquivos e colaborar em projetos.";
+# echo "Ele permite que você crie repositórios, faça commit de alterações e colabore com outros desenvolvedores.";
 aptInstall git;
 
 echoSectionTitle "Cloning dotfiles repo in $dotfiles directory";
@@ -137,7 +150,7 @@ echoSectionTitle "Installing HackNerdFont in .fonts directory";
 cmd mkdir -p $HOME/.local/share/fonts;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf;
-cmd mv $HOME/*.ttf $HOME/.local/share/fonts;
+cmd mv $HOME/HackNerdFont*.ttf /usr/local/share/fonts/
 
 echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
