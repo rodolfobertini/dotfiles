@@ -180,15 +180,13 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-gitClone https://github.com/asdf-vm/asdf.git $HOME/.asdf;
-cmd echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc;
-cmd source ~/.bashrc;
+cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 # install asdf plugins
-cmd $HOME/.asdf/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
-cmd $HOME/.asdf/asdf.sh plugin add yarn;
-cmd $HOME/.asdf/asdf.sh install yarn;
-cmd $HOME/.asdf/asdf.sh install nodejs lts;
+cmd $HOME/.asdf/lib/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+cmd $HOME/.asdf/lib/asdf.sh plugin add yarn 
+cmd $HOME/.asdf/lib/asdf.sh install yarn 1.22.19
+cmd $HOME/.asdf/lib/asdf.sh install nodejs lts
 
 echoColorEmptyLine;
 echo "███████╗███████╗████████╗████████╗██╗███╗   ██╗ ██████╗ ███████╗";
