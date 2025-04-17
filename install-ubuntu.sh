@@ -74,7 +74,9 @@ echoNoColorEmptyLine;
 read -p "Press Enter to continue...";
 
 echoSectionTitle "Updating system";
-cmd aptUpdate & sudo apt -y upgrade;
+
+aptUpdate;
+cmd sudo apt -y upgrade;
 
 echoColorEmptyLine;
 echo "██████╗ ███████╗██████╗ ███████╗███╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗██╗███████╗███████╗";
@@ -85,38 +87,39 @@ echo "██████╔╝███████╗██║     ████
 echo "╚═════╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝╚══════╝╚══════╝";
 echoNoColorEmptyLine;
 
-# echoSectionTitle "Installing curl";
-# cmd aptInstall curl;
+# echoSectionTitle "Installing curl e wget";
+aptInstall curl;
+aptInstall wget;
 
 # echoSectionTitle "Installing exa (um 'ls' melhorado)";
-cmd aptInstall exa;
+aptInstall exa;
 
 # echoSectionTitle "Installing bat (alternativa ao 'cat')";
-cmd aptInstall bat;
+aptInstall bat;
 
 # echoSectionTitle "Installing gh (github)";
-cmd aptInstall gh;
+aptInstall gh;
 
 # echoSectionTitle "Installing ncdu (alternativa ao 'du' para listar tamanho dos diretórios)";
-cmd aptInstall ncdu;
+aptInstall ncdu;
 
 # echoSectionTitle "Installing tilix (Terminal)";
-cmd aptInstall tilix;
+aptInstall tilix;
 
 # echoSectionTitle "Installing fzf";
-# cmd aptInstall fzf;
+aptInstall fzf;
 
 # echoSectionTitle "Installing apt dependencies";
-# cmd aptInstall software-properties-common;
+# aptInstall software-properties-common;
 
 # echoSectionTitle "Installing dconf";
-# cmd aptInstall dconf-editor;
+# aptInstall dconf-editor;
 
 # echoSectionTitle "Installing Git";
-cmd aptInstall git;
+aptInstall git;
 
 echoSectionTitle "Cloning dotfiles repo in $dotfiles directory";
-cmd gitClone https://github.com/rodolfobertini/dotfiles.git $dotfiles;
+gitClone https://github.com/rodolfobertini/dotfiles.git $dotfiles;
 
 echoColorEmptyLine;
 cmd echo "████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     ";
@@ -168,7 +171,7 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf
+gitClone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # install asdf plugins
 cmd $HOME/.asdf/lib/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
