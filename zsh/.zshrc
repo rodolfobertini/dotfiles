@@ -53,7 +53,7 @@ plugins=(
 
 
 source $ZSH/oh-my-zsh.sh
-. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/asdf.sh
 
 # User configuration
 
@@ -115,7 +115,7 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[[ ! -f ~/.asdf/asdf.sh ]] || source $HOME/.asdf/asdf.sh
+# [[ ! -f ~/.asdf/asdf.sh ]] || source $HOME/.asdf/asdf.sh
 [[ ! -f $DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] || source $DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ ! -f $DOTFILES/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]] || source $DOTFILES/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 [[ ! -f $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
