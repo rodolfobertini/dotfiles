@@ -160,6 +160,18 @@ gitClone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/pl
 echoSectionTitle "Installing zsh-completions";
 gitClone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions;
 
+# zsh
+echoSectionTitle "Creating symlink for Zsh at ~/.zshrc";
+cmd rm $HOME/.zshrc;
+cmd ln -s $dotfiles/zsh/.zshrc $HOME/.zshrc;
+cmd sudo chsh -s $(which zsh);
+
+# p10k
+echoSectionTitle "Creating symlink for .p10k.zsh at ~/.p10k.zsh";
+cmd rm $HOME/.p10k.zsh;
+cmd ln -s $dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh;
+
+cmd source $HOME/.zshrc;
 
 echoColorEmptyLine;
 echo "██████╗ ███████╗██╗   ██╗    ███████╗████████╗██╗   ██╗███████╗███████╗";
@@ -171,13 +183,13 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf
+gitClone https://github.com/asdf-vm/asdf.git ~/.asdf;
 
 # install asdf plugins
-cmd $HOME/.asdf/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-cmd $HOME/.asdf/asdf.sh plugin add yarn 
-cmd $HOME/.asdf/asdf.sh install yarn
-cmd $HOME/.asdf/asdf.sh install nodejs lts
+cmd asdf add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
+cmd asdf plugin add yarn;
+cmd asdf install yarn;
+cmd asdf install nodejs lts;
 
 echoColorEmptyLine;
 echo "███████╗███████╗████████╗████████╗██╗███╗   ██╗ ██████╗ ███████╗";
@@ -187,17 +199,6 @@ echo "╚════██║██╔══╝     ██║      ██║   
 echo "███████║███████╗   ██║      ██║   ██║██║ ╚████║╚██████╔╝███████║";
 echo "╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝";
 echoNoColorEmptyLine;
-
-# zsh
-echoSectionTitle "Creating symlink for Zsh at ~/.zshrc";
-cmd rm $HOME/.zshrc;
-cmd ln -s $dotfiles/zsh/.zshrc $HOME/.zshrc;
-cmd sudo chsh -s $(which zsh);
-
-# p10k
-echoSectionTitle "Creating symlink for .p10k.zsh at ~/.p10k.zsh";
-cmd rm $HOME/.p10k.zsh;
-cmd ln -s $dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh;
 
 # .gitconfig
 echoSectionTitle "Creating symlink for .gitconfig at ~/.gitconfig";
