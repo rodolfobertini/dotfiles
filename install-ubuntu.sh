@@ -130,6 +130,13 @@ echoNoColorEmptyLine;
 echoSectionTitle "Installing Zsh";
 aptInstall zsh;
 
+echoSectionTitle "Installing HackNerdFont in .fonts directory";
+cmd mkdir -p ~/.local/share/fonts;
+cmd ln -s $HOME/.local/share/fonts $HOME/.fonts;
+cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf;
+cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf;
+cmd mv *.ttf $HOME/.fonts;
+
 echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
 cmd mv z.sh .z.sh;
@@ -138,7 +145,7 @@ echoSectionTitle "Improved Nano Syntax Highlighting Files";
 cmd wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh;
 
 echoSectionTitle "Installing Oh My Zsh";
-cmd gitClone --depth=1 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+cmd gitClone --depth=1 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh;
 
 echoSectionTitle "Installing Powerlevel10k";
 cmd gitClone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
@@ -182,6 +189,11 @@ echoSectionTitle "Creating symlink for Zsh at ~/.zshrc";
 cmd rm $HOME/.zshrc;
 cmd ln -s $dotfiles/zsh/.zshrc $HOME/.zshrc;
 cmd sudo chsh -s $(which zsh);
+
+# p10k
+echoSectionTitle "Creating symlink for p10k at ~/.p10k";
+cmd rm $HOME/.p10k;
+cmd ln -s $dotfiles/zsh/.p10k $HOME/.p10k;
 
 # .gitconfig
 echoSectionTitle "Creating symlink for .gitconfig at ~/.gitconfig";
