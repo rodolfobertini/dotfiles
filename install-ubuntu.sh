@@ -112,8 +112,8 @@ aptInstall fzf;
 # echoSectionTitle "Installing apt dependencies";
 # aptInstall software-properties-common;
 
-# echoSectionTitle "Installing dconf";
-# aptInstall dconf-editor;
+# echoSectionTitle "Installing tree";
+aptInstall tree;
 
 # echoSectionTitle "Installing Git";
 aptInstall git;
@@ -135,10 +135,9 @@ aptInstall zsh;
 
 echoSectionTitle "Installing HackNerdFont in .fonts directory";
 cmd mkdir -p $HOME/.local/share/fonts;
-cmd ln -s $HOME/.local/share/fonts $HOME/.fonts;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf;
-cmd mv $HOME/*.ttf $HOME/.fonts;
+cmd mv $HOME/*.ttf $HOME/.local/share/fonts;
 
 echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
@@ -171,8 +170,6 @@ echoSectionTitle "Creating symlink for .p10k.zsh at ~/.p10k.zsh";
 cmd rm $HOME/.p10k.zsh;
 cmd ln -s $dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh;
 
-cmd source $HOME/.zshrc;
-
 echoColorEmptyLine;
 echo "██████╗ ███████╗██╗   ██╗    ███████╗████████╗██╗   ██╗███████╗███████╗";
 echo "██╔══██╗██╔════╝██║   ██║    ██╔════╝╚══██╔══╝██║   ██║██╔════╝██╔════╝";
@@ -183,9 +180,9 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-gitClone https://github.com/asdf-vm/asdf.git --branch v0.16.0;
-cmd echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
-cmd source ~/.bashrc
+gitClone https://github.com/asdf-vm/asdf.git $HOME/.asdf;
+cmd echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc;
+cmd source ~/.bashrc;
 
 # install asdf plugins
 cmd $HOME/.asdf/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
