@@ -142,14 +142,14 @@ cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
 cmd mv z.sh .z.sh;
 
 echoSectionTitle "Improved Nano Syntax Highlighting Files";
-cmd gitClone https://github.com/scopatz/nanorc.git .nano;
+gitClone --depth=1 https://github.com/scopatz/nanorc.git .nano;
 cmd echo "include $HOME/.nano/*.nanorc" >> ~/.nanorc;
 
 echoSectionTitle "Installing Oh My Zsh";
-cmd gitClone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh;
+gitClone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh;
 
 echoSectionTitle "Installing Powerlevel10k";
-cmd gitClone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
+gitClone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
 
 echoSectionTitle "Installing zsh-autosuggestions";
 gitClone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions;
