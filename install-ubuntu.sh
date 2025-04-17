@@ -163,7 +163,7 @@ gitClone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugin
 echoSectionTitle "Creating symlink for Zsh at ~/.zshrc";
 cmd rm $HOME/.zshrc;
 cmd ln -s $dotfiles/zsh/.zshrc $HOME/.zshrc;
-cmd sudo chsh -s $(which zsh);
+cmd chsh -s $(which zsh);
 
 # p10k
 echoSectionTitle "Creating symlink for .p10k.zsh at ~/.p10k.zsh";
@@ -180,13 +180,13 @@ echo "╚═════╝ ╚══════╝  ╚═══╝      ╚�
 echoNoColorEmptyLine;
 
 # install asdf
-cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+#cmd gitClone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 # install asdf plugins
-cmd $HOME/.asdf/lib/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-cmd $HOME/.asdf/lib/asdf.sh plugin add yarn 
-cmd $HOME/.asdf/lib/asdf.sh install yarn 1.22.19
-cmd $HOME/.asdf/lib/asdf.sh install nodejs lts
+# cmd $HOME/.asdf/lib/asdf.sh plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+# cmd $HOME/.asdf/lib/asdf.sh plugin add yarn 
+# cmd $HOME/.asdf/lib/asdf.sh install yarn 1.22.19
+# cmd $HOME/.asdf/lib/asdf.sh install nodejs lts
 
 echoColorEmptyLine;
 echo "███████╗███████╗████████╗████████╗██╗███╗   ██╗ ██████╗ ███████╗";
@@ -202,9 +202,9 @@ echoSectionTitle "Creating symlink for .gitconfig at ~/.gitconfig";
 cmd ln -sf $dotfiles/git/.gitconfig $HOME/.gitconfig;
 
 # .asdf
-echoSectionTitle "Creating symlink for .asdfrc at ~/.asdfrc";
-cmd ln -sf $dotfiles/asdf/.asdfrc $HOME/.asdfrc;
-cmd ln -sf $dotfiles/asdf/.tool-versions $HOME/.tool-versions;
+# echoSectionTitle "Creating symlink for .asdfrc at ~/.asdfrc";
+# cmd ln -sf $dotfiles/asdf/.asdfrc $HOME/.asdfrc;
+# cmd ln -sf $dotfiles/asdf/.tool-versions $HOME/.tool-versions;
 
 
 echoColorEmptyLine;
