@@ -131,21 +131,22 @@ echoSectionTitle "Installing Zsh";
 aptInstall zsh;
 
 echoSectionTitle "Installing HackNerdFont in .fonts directory";
-cmd mkdir -p ~/.local/share/fonts;
+cmd mkdir -p $HOME/.local/share/fonts;
 cmd ln -s $HOME/.local/share/fonts $HOME/.fonts;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf;
 cmd wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf;
-cmd mv *.ttf $HOME/.fonts;
+cmd mv $HOME/*.ttf $HOME/.fonts;
 
 echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
 cmd mv z.sh .z.sh;
 
 echoSectionTitle "Improved Nano Syntax Highlighting Files";
-cmd wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh;
+cmd gitClone https://github.com/scopatz/nanorc.git .nano;
+cmd echo "include $HOME/.nano/*.nanorc" >> ~/.nanorc;
 
 echoSectionTitle "Installing Oh My Zsh";
-cmd gitClone --depth=1 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh;
+cmd gitClone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh;
 
 echoSectionTitle "Installing Powerlevel10k";
 cmd gitClone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
