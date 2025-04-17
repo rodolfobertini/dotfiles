@@ -192,9 +192,9 @@ cmd ln -s $dotfiles/zsh/.zshrc $HOME/.zshrc;
 cmd sudo chsh -s $(which zsh);
 
 # p10k
-echoSectionTitle "Creating symlink for p10k at ~/.p10k";
-cmd rm $HOME/.p10k;
-cmd ln -s $dotfiles/zsh/.p10k $HOME/.p10k;
+echoSectionTitle "Creating symlink for .p10k.zsh at ~/.p10k.zsh";
+cmd rm $HOME/.p10k.zsh;
+cmd ln -s $dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh;
 
 # .gitconfig
 echoSectionTitle "Creating symlink for .gitconfig at ~/.gitconfig";
