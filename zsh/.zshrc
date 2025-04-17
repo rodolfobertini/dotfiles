@@ -151,7 +151,10 @@ zinit light-mode for \
 
 ### Fim do trecho de instalação do Zinit
 
-
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
+setopt correct
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
