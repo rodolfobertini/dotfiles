@@ -149,7 +149,7 @@ echoSectionTitle "Installing HackNerdFont in .fonts directory";
 cmd mkdir -p $HOME/.local/share/fonts;
 cmd wget https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf;
 cmd wget https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf;
-cmd mv $HOME/HackNerdFont*.ttf /usr/local/share/fonts/
+cmd sudo mv $HOME/HackNerdFont*.ttf /usr/local/share/fonts/
 
 echoSectionTitle "Installing Z.sh in home directory";
 cmd wget https://raw.githubusercontent.com/rupa/z/master/z.sh;
