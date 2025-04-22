@@ -213,6 +213,11 @@ echoNoColorEmptyLine;
 echoSectionTitle "Creating symlink for .gitconfig at ~/.gitconfig";
 cmd ln -sf $dotfiles/git/.gitconfig $HOME/.gitconfig;
 
+# Criando link simbolico para vte.sh (
+if [ $VTE_VERSION ]; then
+        ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+fi
+
 # .asdf
 # echoSectionTitle "Creating symlink for .asdfrc at ~/.asdfrc";
 # cmd ln -sf $dotfiles/asdf/.asdfrc $HOME/.asdfrc;
