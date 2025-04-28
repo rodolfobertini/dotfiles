@@ -92,6 +92,23 @@ fi
 # Instalar fontes Nerd
 installNerdFonts;
 
+# Instalar Z.sh
+echoSectionTitle "Installing Z.sh in home directory";
+if [ ! -f "$HOME/.z.sh" ]; then
+  cmd wget -q https://raw.githubusercontent.com/rupa/z/master/z.sh -O $HOME/.z.sh;
+else
+  echo "Z.sh já está instalado. Pulando..."
+fi
+
+# Melhorar Sintaxe do Nano
+echoSectionTitle "Improved Nano Syntax Highlighting Files";
+if [ ! -d "$HOME/.nano" ]; then
+  gitClone --depth=1 https://github.com/scopatz/nanorc.git "$HOME/.nano";
+  cmd echo "include $HOME/.nano/*.nanorc" >> ~/.nanorc;
+else
+  echo "Arquivos de destaque de sintaxe do Nano já clonados. Pulando..."
+fi
+
 # Instalar Oh My Zsh
 echoSectionTitle "Instalando Oh My Zsh"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -112,6 +129,17 @@ fi
 echoSectionTitle "Criando links simbólicos"
 cmd ln -sf "$dotfiles/zsh/.zshrc" "$HOME/.zshrc";
 cmd ln -sf "$dotfiles/zsh/.p10k.zsh" "$HOME/.p10k.zsh";
+cmd ln -sf "$dotfiles/git/.gitconfig" "$HOME/.gitconfig";
+
+# Criar link simbólico para vte.sh
+if [ "$VTE_VERSION" ]; then
+  if [ ! -L "/etc/profile.d/vte.sh" ]; then
+    echoSectionTitle "Creating symlink for vte.sh";
+    cmd sudo ln -sf /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh;
+  else
+    echo "Link simbólico para vte.sh já existe. Pulando..."
+  fi
+fi
 
 # Alterar shell padrão para Zsh
 echoSectionTitle "Alterando shell padrão para Zsh"
